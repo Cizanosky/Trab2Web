@@ -1,0 +1,15 @@
+.main-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0 5% 0;
+}
+
+.cards-employees{
+    width: 70%;
+    gap: 1.5%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
