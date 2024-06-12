@@ -20,4 +20,8 @@ export class HeaderComponent implements OnInit {
   public goEmployees(): void {
     this.router.navigate(['employees']);
   }
+
+  public goCreateUser(): void{
+    this.router.navigate(['cadastro']);
+  }
 }

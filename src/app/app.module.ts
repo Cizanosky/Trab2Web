@@ -8,6 +8,9 @@ import { HomeComponent } from './features/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EmployeesComponent } from './features/employees/employees.component';
+import { CadastroComponent } from './features/cadastro/cadastro.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { EmployeesComponent } from './features/employees/employees.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

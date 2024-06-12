@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="card">
+    <label id="id-label" for="id-input">ID:</label>
+    <input id="id-input" type="number" [(ngModel)]="id" />
+    <button (click)="consultar()">Consultar</button>
+
+    <div class="consulta-messages" *ngIf="cadastro">
+      <p>ID: {{ cadastro.id }}</p>
+      <p>Nome: {{ cadastro.nome }}</p>
+      <p>Departamento: {{ cadastro.departamento }}</p>
+      <p>Endereço: {{ cadastro.endereco }}</p>
+      <p>Email: {{ cadastro.email }}</p>
+      <button (click)="excluir()">Exclusão</button>
+    </div>
+
+    <div class="mensagem-status" *ngIf="mensagemExclusao" [ngClass]="{'message': true, 'ok': mensagemCorExclusao === 'green', 'error': mensagemCorExclusao === 'red'}">
+      {{ mensagemExclusao }}
+    </div>
+  </div>
+
+  <!-- Novo formulário de alteração -->
+  <div class="card" *ngIf="cadastro">
+    <h3>Alterar Cadastro</h3>
+    <form (ngSubmit)="alterar()">
+      <label for="nome">Nome:</label>
+      <input id="nome" type="text" [(ngModel)]="cadastroAlterado.nome" name="nome" />
+
+      <label for="departamento">Departamento:</label>
+      <input id="departamento" type="text" [(ngModel)]="cadastroAlterado.departamento" name="departamento" />
+
+      <label for="endereco">Endereço:</label>
+      <input id="endereco" type="text" [(ngModel)]="cadastroAlterado.endereco" name="endereco" />
+
+      <label for="email">Email:</label>
+      <input id="email" type="text" [(ngModel)]="cadastroAlterado.email" name="email" />
+
+      <button type="submit">Alterar</button>
+    </form>
+
+    <div class="mensagem-status" *ngIf="mensagemAlteracao" [ngClass]="{'message': true, 'ok': mensagemCorAlteracao === 'green', 'error': mensagemCorAlteracao === 'red'}">
+      {{ mensagemAlteracao }}
+    </div>
+  </div>
+</div>
